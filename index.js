@@ -1,7 +1,10 @@
 
-const { promptSVGText } = require( "./lib/inquirerPrompts" );
+const { promptSVGText, promptSVGTextColor } = require( "./lib/inquirerPrompts" );
 
 promptSVGText()
-  .then( answer => {
-    console.log( answer );
+  .then( answers => {
+    return promptSVGTextColor( answers );
+  } )
+  .then( answers => {
+    console.log( answers );
   } );
